@@ -34,3 +34,12 @@
     color: rgb(27, 89, 125);
   }
 
+  .navbarStyles{
+    width: 200px;
+    height: 100vh;
+    border: 1px, solid, #eee;
+    float: left;
+    overflow-y: auto;
+  
+  }
+  

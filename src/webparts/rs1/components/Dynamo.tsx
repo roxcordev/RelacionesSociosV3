@@ -15,17 +15,18 @@ import { Idatos } from './models/Idatos'
 export default class Dynamo extends React.Component<IDynamoProps, {}> {
 
   itemsDatos:Idatos[]=[
-    {name:'Información del proyecto',key:'infoProject'},
-    {name:'Documentación',key:'doc'}
+    {name:'item contenido1',url:'#',key:'contenido1'},
+    {name:'item contenido2',url:'#',key:'contenido2'}
+    
   ]
 
     
     public render(): React.ReactElement<IDynamoProps> { 
       return (
               <div>
-                <div className="navbar navbar-light bg-light"><Header tituloGeneral="Titulo principal"/></div>
+                <div><Header tituloGeneral="Titulo principal"/></div>
 
-                <div className="list-group float-sm-left"> <NavBar items={this.itemsDatos} /></div>
+                <div> <NavBar items={this.itemsDatos} /></div>
 
 
                 {/* <div> <Content contenido="aqui tabla"/></div>  */}

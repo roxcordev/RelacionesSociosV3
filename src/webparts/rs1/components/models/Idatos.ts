@@ -1,5 +1,6 @@
 
 export interface Idatos {
     name: string,
-    key: string
+    key: string,
+    url:string
 }

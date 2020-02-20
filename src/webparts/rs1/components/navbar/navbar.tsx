@@ -11,51 +11,53 @@ import Contenido2 from '../contenido2/contenido2';
 export default class NavBasicExample extends React.Component<InavbarProps, InavbarState>{
     constructor(props: InavbarProps) {
         super(props)
-        this.state ={typeComponent:"contenido 2"}
+        this.state ={typeComponent:"contenido2"}
         
     }
    
 
-    onClick(event, element) {
-        this.setState({ typeComponent: element.key });
-    }
-    
+   
     render() {
-        let navbarLeft: JSX.Element;
+        let panelRight: JSX.Element;
 
 
-        if(this.state.typeComponent=="contenido 1"){
-            navbarLeft= <div><Contenido1/></div>;
+        if(this.state.typeComponent=="contenido1"){
+            panelRight= <div><Contenido1/></div>;
            
 
         }
         if(this.state.typeComponent=="contenido2"){
-            navbarLeft=<div><Contenido2/></div>
+            panelRight=<div><Contenido2/></div>
         }
         //let navbarCenter: JSX.Element[] = this.props.items.map((item)=> <div>{item.name}</div> )
 
-        let navbarCenter: JSX.Element = <Nav
+        let navbarLeft: JSX.Element = <div className="navbarStyles"><Nav
              
       
         groups={[
             {
 
-                name: 'El Retrato de Dorian Gray',
+                name: 'contenido',
 
                 links: this.props.items
             }
         ]}
         onLinkClick={this.onClick.bind(this)}
-    />
+    /></div>
 
 
         return (
             <div>
                {navbarLeft}
-               {navbarCenter}
+               {panelRight}
             </div>
         )
     }
+
+    onClick(event, element) {
+        this.setState({ typeComponent: element.key });
+    }
+    
 }
 
 
